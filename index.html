@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Webinar Registration</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                color: #ff6600;
+                margin: 0;
+                padding: 0;
+                background-color: #211e1e; /* Gray background */
+            }
+
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+                margin-top: 10px;
+            }
+            .text {
+                color: #ff6600;
+            }
+            h1 {
+                color: #ff6600; /* Orange text */
+            }
+
+            .registration-form {
+                margin-top: 20px;
+                text-align: left;
+            }
+
+            .registration-form label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #ff6600; /* Orange text */
+            }
+
+            .registration-form input {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .register-button {
+                background-color: #4caf50; /* Frog green button */
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            .register-button:hover {
+                background-color: #45a049; /* Darker shade on hover */
+            }
+            .popup {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 20px;
+                border-radius: 5px;
+                z-index: 1000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="icon">
+                <img
+                    src="https://cdn.iconscout.com/icon/premium/png-512-thumb/university-53-757579.png?f=avif&w=256"
+                    alt="Webinar Icon"
+                    width="50"
+                />
+                <hr />
+
+                <img
+                    src="https://www.allisonacademy.com/wp-content/uploads/2021/12/Teacher-in-the-classroom.jpg"
+                    alt="Additional Image"
+                    width="600"
+                />
+                <p id="text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    vitae arcu a mi sodales commodoorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Sed vitae arcu a mi sodales
+                    commodoorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Sed vitae arcu a mi sodales commodoorem ipsum dolor
+                    sit amet, consectetur adipiscing elit. Sed vitae arcu a mi
+                    sodales commodoorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Sed vitae arcu a mi sodales commodoorem
+                    ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
+                    arcu a mi sodales commodo.
+                </p>
+            </div>
+
+            <h1>Webinar Registration</h1>
+            <form
+                class="registration-form"
+                action="your-registration-action-url"
+                method="post"
+            >
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="class">Class:</label>
+                <input type="text" id="class" name="class" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required />
+
+                <button class="register-button" type="submit">Register</button>
+            </form>
+        </div>
+        <div id="popup" class="popup">Thank you!</div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const registerButton =
+                    document.querySelector(".register-button");
+                const popup = document.getElementById("popup");
+
+                registerButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    popup.style.display = "block";
+                    setTimeout(function () {
+                        popup.style.display = "none";
+                    }, 2000); // Hide the pop-up after 2 seconds
+                });
+            });
+        </script>
+    </body>
+</html>
